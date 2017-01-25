@@ -1,0 +1,23 @@
+{
+  "name": "stop-thief",
+  "version": "1.0.0",
+  "description": "A recreation of the board game Stop Thief!",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carrat/stop-thief.git"
+  },
+  "author": "Andrew Carr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/carrat/stop-thief/issues"
+  },
+  "homepage": "https://github.com/carrat/stop-thief#readme",
+  "dependencies": {
+    "morgan": "^1.7.0"
+  }
+}
