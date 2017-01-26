@@ -14,9 +14,7 @@ module.exports = function(sequelize, DataTypes) {
     tableName: 'games',
     classMethods: {
       associate: function(models) {
-        Game.belongsTo(models.Player);
-        Game.belongsTo(models.Detective);
-        Game.belongsTo(models.Thief);
+        Game.belongsTo(models.User);
       }
     }
   });

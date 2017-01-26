@@ -18,6 +18,13 @@
   },
   "homepage": "https://github.com/carrat/stop-thief#readme",
   "dependencies": {
-    "morgan": "^1.7.0"
+    "body-parser": "^1.16.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "method-override": "^2.3.7",
+    "morgan": "^1.7.0",
+    "mysql": "^2.13.0",
+    "sequelize": "^3.30.0",
+    "sequelize-cli": "^2.5.1"
   }
 }

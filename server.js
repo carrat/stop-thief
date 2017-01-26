@@ -7,6 +7,7 @@ var logger = require('morgan');
 // define controllers
 var application_controller = require('./controllers/application_controller.js');
 var game_controller = require('./controllers/game_controller.js');
+var user_controller = require('./controllers/user_controller.js');
 
 var app = express();
 

@@ -1,0 +1,23 @@
+
+<!-- this is gift/index.handlebars -->
+
+<div class="row" id="lists">
+  <div class="col-sm-12">
+    <h2>All Gifts</h2>
+    <div class="listBox">
+    <div class="row childRow">
+      {{#each giftObject}}
+          
+            <div class="col-sm-3 text-center" >
+              <img src="/static/img/{{this.dataValues.gift_icon}}" class="candyCaneLarge">
+              <h3 class="giftTitle">{{this.dataValues.gift_name}}</h3>
+            </div>
+          
+      {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
+
+          
+    
