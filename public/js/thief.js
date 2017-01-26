@@ -20,15 +20,15 @@ function thiefLanding(location, possibleMoves) {
 
 	var landingSpot;
 
-	if (landingSpot is an active crime scene, thief chooses that landing spot) {
+	//if (landingSpot is an active crime scene, thief chooses that landing spot) {
 
 
 
-	}
+	//}
 	//otherwise andomly generate thief landing spot from possible locations
-	else {
+	//else {
 
-	}
+	//}
 };
 
 //Move the thief
@@ -42,13 +42,13 @@ function thiefMove(start, finish) {
 
 	// play sound for clue based on landing spot
 
-	if (finish.environment_id === 5 && finish.tile_id NOT IN crimes array) {
+	//if (finish.environment_id === 5 && finish.tile_id NOT IN crimes array) {
 		commitCrime(finish.tile_id);
-	}
+	//}
 
-	else {
+	//else {
 		playSound(finish.environment_id);
-	}
+	//}
 };
 
 // Thief is going to commit a crime

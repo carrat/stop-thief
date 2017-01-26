@@ -13,7 +13,7 @@ var sequelizeConnection = models.sequelize
 // define routes
 router.get('/', function (req, res) {
 
-	res.render('index', res);
+	res.render('index', res, {layout: 'game'});
 	
 });
 

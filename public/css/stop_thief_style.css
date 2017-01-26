@@ -4,8 +4,8 @@
 
 html {
 	/*background-color: #970000;*/
-	background-image: url(../img/santa.png);
-	background-size: cover;
+	/*background-image: url(../img/santa.png);
+	background-size: cover;*/
 	min-height: 100%;
 	background-color: rgba(0,0,0,.99);
 }
@@ -19,6 +19,7 @@ body {
 	background-color: transparent;
 	/*background-color: #970000;*/
 	height: 100%;
+	overflow: hidden;
 }
 
 a {
@@ -122,22 +123,16 @@ nav a:hover {
 }
 
 .container {
-	padding-top: 40px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-bottom: 85px;
+	padding-top: 17px;
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-bottom: 0px;
 	/*background: rgba(255,255,255,.1);*/	
-	box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.1);
-	border: 1px solid #1b1d27;
-	margin-bottom: 100px;
+	/*box-shadow: 15px 15px 7px rgba(0, 0, 0, 0.1);*/
+	border: 1px solid #ffffff;
+	margin-bottom: 0px;
 }
 
-.home {
-	box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.0);
-	border: 0px none;
-	padding: 20px;
-	/*background-color: rgba(151,0,0,.6);*/
-}
 
 #credits {
 	color: #bebdbd;
@@ -329,6 +324,25 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 	font-size: 9pt;
 }
 
+.header {
+	width: 100%;
+	margin: 0px;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-top: 10px;
+	text-align: center;
+	background-color: #333333;
+	position: fixed;
+	top: 0;
+	left: 0;
+	border-top: 1px solid #666666;
+	color: #FFFFFF;
+	font-size: 9pt;
+
+
+}
+
 .inlineForm {
 	display: inline-block;
 }
@@ -347,7 +361,107 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 	text-decoration: none;
 }
 
-@media screen and (max-width: 768px) {
+
+.tile {
+	width: 50px;
+	height: 50px;
+	border: 1px solid #FFFFFF;
+	background-color: #ababab;
+	display: inline-block;
+}
+
+.redtile {
+	background-color: #bbbbbb;
+
+}
+
+#controlboard {
+	height: 200px;
+	background-color: #333333;
+}
+
+
+
+
+/* Gameboard */
+
+#gameboard {
+	margin: 0 auto;
+    margin-top: 20px;
+    width: 1170px;
+}
+#wrapper {
+    border: solid 0px #000;
+    width: 1170px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+#controls {
+    width: 100%;
+    text-align: center;
+	padding: 0px;
+    color: #FFFFFF;
+}
+#controls span {
+    cursor: pointer;
+}
+
+.kinetic-moving-up {
+    border-top-color: green !important;
+}
+.kinetic-moving-down {
+    border-bottom-color: green !important;
+}
+.kinetic-moving-left {
+    border-left-color: green !important;
+}
+.kinetic-moving-right {
+    border-right-color: green !important;
+}
+
+.kinetic-decelerating-up {
+    border-top-color: red !important;
+}
+.kinetic-decelerating-down {
+    border-bottom-color: red !important;
+}
+.kinetic-decelerating-left {
+    border-left-color: red !important;
+}
+.kinetic-decelerating-right {
+    border-right-color: red !important;
+}
+
+#inner { width: 1900px; height: 500px; }
+    #inner img {
+        display: block;
+        width: 1900px;
+    }
+#left, #right, #up, #down { cursor: pointer; }
+
+
+
+@media (min-width: 1200px) {
+
+
+
+}
+
+
+
+
+
+@media screen and (max-width: 1255px) {
+
+	#gameboard {
+	    width: 970px;
+	}
+	#wrapper {
+
+	    width: 970px;
+
+	}
 
 
 

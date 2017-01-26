@@ -10,10 +10,10 @@ var newUser;
 
 // define routes
 router.get('/', function (req, res) {
-		res.render('users/index', req);
+		res.render('index', req);
 });
 
-router.post('/users/create', function (req, res) {
+router.post('/create', function (req, res) {
 	var user = req.body; // set request to variable
 // create new instance of user
 	models.User.create(
