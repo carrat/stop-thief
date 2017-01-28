@@ -4,7 +4,7 @@ var express = require('express');
 var router = express.Router();
 
 // Dependencies
-var models  = require('../models');
+var models  = require('../models/gameboard.js');
 
 var newUser;
 

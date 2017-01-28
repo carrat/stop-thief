@@ -1,12 +1,9 @@
 
 <!-- this is games/index.handlebars -->
 
-<div class="row">
-  <div class="col-sm-12">
-    <h2>Games</h2>
-   
-  </div>
-</div>
 
-          
-    
+    {{#each tiles}}
+    	<div class="tile bg-{{this.env_type}}" id="{{this.tile_id}}" data-bldg="{{this.building}}" data-space="{{this.space}}">
+    		{{this.x1}}.{{this.y1}}
+    	</div>
+    {{/each}}

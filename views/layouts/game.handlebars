@@ -50,6 +50,7 @@
 	        <div id="gameboard">
 	            <div id="wrapper">
 	                <div id="inner" class="inner_gameboard">
+	                {{{ body }}}
 	                    
 	                </div>
 	            </div>
@@ -129,33 +130,10 @@
 // If page is ready
 $(document).ready(function(){
 
-	function buildGameboard() {
-
-		var counter = 0;
-
-		for (i=1; i<=38; i++) {
-			$(".inner_gameboard").append("<div class='gameboard_row' id='row" + i + "'</div></div>");
-
-			for (j=1; j<=38; j++) {
-				counter++;
-				var newDiv = document.createElement("div");
-	    		$(newDiv).attr("class", "tile");
-	    		$(newDiv).attr("onmouseover", "$(this).css('background-color','red')")
-	    		$(newDiv).attr("onmouseout", "$(this).css('background-color','#ababab')")
-	    		$(newDiv).attr("id", counter);
-	    		$(newDiv).text(counter);
-	    		$("#row" + i).append(newDiv);
-
-	    		
-			}
-		}
-
-		
-
-	}
+	
 
 
-buildGameboard();
+
 
 
 });

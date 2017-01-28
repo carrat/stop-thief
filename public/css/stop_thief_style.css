@@ -365,9 +365,50 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 .tile {
 	width: 50px;
 	height: 50px;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #181e52;
 	background-color: #ababab;
 	display: inline-block;
+	margin: 0px;
+	margin-left: -0px;
+	margin-right: -4px;
+	text-align: center;
+	vertical-align: middle;
+	color: #FFFFFF;
+	padding-top: 15px;
+	padding-bottom: auto;
+}
+
+.bg-1 {
+	background-color: #ffffff;
+	color: #000000;
+}
+
+.bg-2 {
+	background-color: #f7a63d;
+}
+
+.bg-3 {
+	background-color: #27bc5a;
+}
+
+.bg-4 {
+	background-color: #28deff;
+}
+
+.bg-5 {
+	background-color: #cf3b22;
+}
+
+.bg-6 {
+	background-color: #ffda2c;
+}
+
+.bg-7 {
+	background-color: #ababab;
+}
+
+.bg-8 {
+	background-color: #df08c3;
 }
 
 .redtile {

@@ -1,17 +1,6 @@
 
 // require dependencies
-
-//var mysql = require('mysql');
-
-//var connection = mysql.createConnection({
-//	host: '127.0.0.1',
-//	port: 3306,
-//	user: 'root',
-//	password: 'password',
-//	database: 'stop_thief_db'
-//})
-
-
+// require connection
 
 // initialize game variables
 
@@ -103,6 +92,8 @@ function buildGameboard() {
 	}
 
 }
+
+
 
 buildGameboard();
 
