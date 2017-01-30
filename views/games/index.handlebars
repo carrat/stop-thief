@@ -3,7 +3,7 @@
 
 
     {{#each tiles.tilesObject}}
-    	<div class="tile bg-{{this.dataValues.environment_id}}" id="{{this.dataValues.tile_id}}" data-bldg="{{this.dataValues.building_id}}" data-space="{{this.dataValues.space}}">
-    		{{this.dataValues.x1}}.{{this.dataValues.y1}}
+    	<div class="tile bg-{{this.dataValues.environment_id}}" id="{{this.dataValues.id}}" data-bldg="{{this.dataValues.building_id}}" data-space="{{this.dataValues.space}} data-image="/static/images/tiles/{{this.dataValues.id}}.png" style="background-image:url(/static/images/tiles/{{this.dataValues.id}}.png); background-size: 100% 100%;
+    background-repeat: no-repeat)">
     	</div>
     {{/each}}

@@ -26,7 +26,7 @@ router.get('/', function (req, res) {
 	};
 
 
-	models.Tile.findAll({order: ['y1', 'x1'],  include: [ models.Environment, models.Building ]})
+	models.Tile.findAll({order: ['x1', 'y1'],  include: [ models.Environment, models.Building ]})
 	.then(function(tiles){
 		var tilesArr = {tilesObject: tiles};
 		console.log(tilesArr);
@@ -85,7 +85,7 @@ router.get('/', function (req, res) {
 			gameObj.thief_spaces = thiefSpacesArr;
 		})
 		.then(function(){
-			console.log(gameObj);
+			console.log(gameObj.tiles.tilesObject[0].dataValues);
 		res.render('games/index', gameObj);
 		})
 	})

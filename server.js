@@ -31,14 +31,21 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.text());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
+
 // override with POST having ?_method=DELETE
 
 
 app.use(methodOverride('_method'));
 //set up handlebars
 var exphbs = require('express-handlebars');
+var Handlebars = require('handlebars');
 app.engine('handlebars', exphbs({
-	defaultLayout: 'main'
+	defaultLayout: 'main',
+	helpers: {
+		staticTile: function(name) { // Static helper to find URL of tile background images
+			return new Handlebars.SafeString(name);
+		}
+	}
 }));
 app.set('view engine', 'handlebars');
 

@@ -334,8 +334,8 @@
 
   Kinetic.prototype._start = function (clientX, clientY){
     this.mouseDown = true;
-    this.velocity = this.prevXPos = 0;
-    this.velocityY = this.prevYPos = 0;
+    this.velocity = this.prevXPos = 500;
+    this.velocityY = this.prevYPos = 100;
     this.xpos = clientX;
     this.ypos = clientY;
   };

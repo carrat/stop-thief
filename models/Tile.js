@@ -9,7 +9,8 @@ module.exports = function(sequelize, DataTypes) {
     player_visit: DataTypes.BOOLEAN,
     thief_visit: DataTypes.BOOLEAN,
     building: DataTypes.INTEGER,
-    space: DataTypes.INTEGER
+    space: DataTypes.INTEGER,
+    image: DataTypes.STRING
   }, {
     underscored: true,
     freezeTableName: true,

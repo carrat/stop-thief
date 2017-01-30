@@ -13,7 +13,7 @@ var sequelizeConnection = models.sequelize
 router.get('/', function (req, res) {
 
 
-	res.render('index', res);
+	res.render('index', {layout: 'home'});
 });
 // export router
 module.exports = router;

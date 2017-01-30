@@ -54,12 +54,13 @@
 	                    
 	                </div>
 	            </div>
-	            <div id="controls">
+	           <!-- <div id="controls">
 	                <span id="left">LEFT</span> |
 	                <span id="right">RIGHT</span> |
 	                 <span id="up">UP</span> |
 	                <span id="down">DOWN</span>
-	            </div>  	
+	            </div>  
+	           -->	
 	        </div>
 
 
@@ -130,12 +131,22 @@
 // If page is ready
 $(document).ready(function(){
 
+	FocusOnInput();
+
+	function FocusOnInput() {
+
+		    $('#209').focus();
+	}
+
+
+	$(".tile").hover(
+		  function() {
+		    $(this).css("opacity", ".4");
+		  }, function() {
+		    $(this).css("opacity", "1");
+		  }
+	);
 	
-
-
-
-
-
 });
 
 
