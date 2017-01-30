@@ -4,9 +4,6 @@ var methodOverride	= require('method-override');
 var bodyParser 	= require('body-parser');
 var logger = require('morgan');
 
-
-
-
 // define controllers
 var application_controller = require('./controllers/application_controller.js');
 var games_controller = require('./controllers/games_controller.js');
@@ -14,9 +11,8 @@ var users_controller = require('./controllers/users_controller.js');
 
 var app = express();
 
-
-
-
+// we bring in the models we exported with index.js
+var models = require("./models");
 // Set which database connection to use
 var env = process.env.NODE_ENV || 'development';
 // create server instance
@@ -46,15 +42,17 @@ app.engine('handlebars', exphbs({
 }));
 app.set('view engine', 'handlebars');
 
-// define routes
-var routes = require('./controllers/games_controller.js')
-app.use('/', routes);
+app.use('/', application_controller);
+app.use('/games', games_controller);
+app.use('/users', users_controller);
 
-
+// we sync the models with our db 
+// (thus creating the apropos tables)
+models.sequelize.sync().then(function () {
 	// set our app to listen to the port we set above
   var server = app.listen(app.get('port'), function() {
   	// then save a log of the listening to our debugger.
     console.log('Express server listening on port ' + server.address().port);
   });
-
+});
 

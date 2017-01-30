@@ -2,8 +2,8 @@
 <!-- this is games/index.handlebars -->
 
 
-    {{#each tiles}}
-    	<div class="tile bg-{{this.env_type}}" id="{{this.tile_id}}" data-bldg="{{this.building}}" data-space="{{this.space}}">
-    		{{this.x1}}.{{this.y1}}
+    {{#each tiles.tilesObject}}
+    	<div class="tile bg-{{this.dataValues.environment_id}}" id="{{this.dataValues.tile_id}}" data-bldg="{{this.dataValues.building_id}}" data-space="{{this.dataValues.space}}">
+    		{{this.dataValues.x1}}.{{this.dataValues.y1}}
     	</div>
     {{/each}}

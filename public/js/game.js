@@ -5,15 +5,28 @@
 // initialize game variables
 
 var game = {
-	'player': '',
-		'detective': '',
-		'thief': '',
-		'turn': 0,
-		'crimes': [],
-		'bank': 1000,
-		'cards': [],
-		'clues': []
+	'player': 'Andrew',
+	'detective': {'id': '',
+				  'name': '',
+				  'image':''},
+	'thief': {'id': '',
+			  'name': '',
+			  'image':'',
+			  'bounty': ''},
+	'turns': 0,
+	'crimes': [],
+	'bank': 1000,
+	'cards': [],
+	'clues': [],
+	'thief_location': {'id': '',
+						'x': '',
+						'y': ''},
+	'player_location': {'id': '',
+						'x': '',
+						'y': ''}
 };
+
+
 
 
 //Save Game
@@ -28,6 +41,26 @@ function getHint() {
 
 
 
+};
+
+// draw starting sleuth cards
+function getSleuthCards() {
+
+	for (i=1; i<=3; i++) {
+		var myCard = getRandomInt(0, 12);
+			games.cards.push(myCard);
+	}
+};
+
+// drandomly select thief
+function selectThief() {
+
+	var myThief = getRandomInt(0, 12);
+
+	thiefSelected = thiefs[myThief];
+	game.thief.id = thiefs[thiefSelected].id;
+	game.thief.name = thiefs[thiefSelected].name;
+	game.thief.image = thiefs[thiefSelected].image;
 };
 
 // Load instructions
@@ -50,51 +83,46 @@ function newGame(player) {
 	// clear game object
 
 	game = {
-		'player': '',
-		'detective': '',
-		'thief': '',
-		'turn': 0,
-		'crimes': [],
-		'bank': 1000,
-		'cards': [],
-		'clues': []
+	'player': 'Andrew',
+	'detective': {'id': '',
+				  'name': '',
+				  'image':''},
+	'thief': {'id': '',
+			  'name': '',
+			  'image':'',
+			  'bounty': ''},
+	'turns': 0,
+	'crimes': [],
+	'bank': 1000,
+	'cards': [],
+	'clues': [],
+	'thief_location': {'id': '',
+						'x': '',
+						'y': ''},
+	'player_location': {'id': '',
+						'x': '',
+						'y': ''}
 	};
 
 	// let player choose detective
+	chooseDetective();
 
 
 	// draw sleuth cards
+	getSleuthCards();
 
 
 	// select thief
+	selectThief();
 
 
 	// commit crime
+	commitCrime();
 
 
 	// player turn
-
-
-}
-
-
-function buildGameboard() {
-
-	for (i=1; i<38; i++) {
-		$(".inner_gameboard").append("<div class='row gameboard_row' id='row'" + i + "'</div><div class='col-sm-12 gameboard_col'></div></div>");
-
-		for (j=1; j<38; j++) {
-			var newDiv = document.createElement("div");
-    		$(newDiv).attr("class", "tile");
-    		$(newDiv).text(i);
-    		$("#row" + i).append(newDiv);
-		}
-	}
+	loadPlayerTurn();
 
 }
-
-
-
-buildGameboard();
 
 

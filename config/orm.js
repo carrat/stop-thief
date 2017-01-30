@@ -22,18 +22,43 @@ var orm = {
 			cb(res);
 		});
 	},
+	selectAllThiefs: function (cb) {
+		connection.query('SELECT * FROM thiefs',  function(err, res){
+			if (err) throw err;
+			cb(res);
+		});
+	},
 	selectAllCards: function (cb) {
 		connection.query('SELECT * FROM cards',  function(err, res){
 			if (err) throw err;
 			cb(res);
 		});
 	},
-	selectAllMoney: function (cb) {
-		connection.query('SELECT * FROM money',  function(err, res){
+	selectAllSounds: function (cb) {
+		connection.query('SELECT * FROM sounds',  function(err, res){
+			if (err) throw err;
+			cb(res);
+		});
+	},
+	selectAllCardTypes: function (cb) {
+		connection.query('SELECT * FROM card_types',  function(err, res){
+			if (err) throw err;
+			cb(res);
+		});
+	},
+	selectAllCrimeScenes: function (cb) {
+		connection.query('SELECT * FROM tiles WHERE crime_scene = 1',  function(err, res){
+			if (err) throw err;
+			cb(res);
+		});
+	},
+	selectAllThiefSpaces: function (cb) {
+		connection.query('SELECT * FROM tiles WHERE thief_visit = 1',  function(err, res){
 			if (err) throw err;
 			cb(res);
 		});
 	}
+
 };
 
 //export ORM functions

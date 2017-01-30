@@ -4,7 +4,10 @@ var express = require('express');
 var router = express.Router();
 
 // Dependencies
-var models  = require('../models/gameboard.js');
+var models  = require('../models');
+
+// extract our sequelize connection from the models object, to avoid confusion
+var sequelizeConnection = models.sequelize
 
 // define routes
 router.get('/', function (req, res) {

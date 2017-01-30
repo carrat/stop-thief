@@ -8,7 +8,7 @@ var source = {
         port: 3306,
         host: 'localhost',
         user: 'root',
-        password: "password",
+        password: "Wah00sam",
         database: "stop_thief_db"
     },
     jawsDB: {

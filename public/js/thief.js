@@ -52,7 +52,7 @@ function thiefMove(start, finish) {
 };
 
 // Thief is going to commit a crime
-function commitCrime(location) {
+function commitCrime() {
 	// play sound for crime scene
 	playSound(5);
 
