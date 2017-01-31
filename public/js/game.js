@@ -5,28 +5,20 @@
 // initialize game variables
 
 var game = {
-	'player': 'Andrew',
-	'detective': {'id': '',
-				  'name': '',
-				  'image':''},
-	'thief': {'id': '',
-			  'name': '',
-			  'image':'',
-			  'bounty': ''},
-	'turns': 0,
-	'crimes': [],
-	'bank': 1000,
-	'cards': [],
-	'clues': [],
-	'thief_location': {'id': '',
-						'x': '',
-						'y': ''},
-	'player_location': {'id': '',
-						'x': '',
-						'y': ''}
+		'player': 1,
+		'detective': {'id' = '6',
+				'name' = 'Sheerluck Homes'
+				},
+		'thief': {'id' = '10',
+				'name' = 'The Brain',
+				'bounty' = '1000'
+				},
+		'turn': 0,
+		'crimes': [],
+		'bank': 300,
+		'cards': [],
+		'clues': []
 };
-
-
 
 
 //Save Game
@@ -41,26 +33,6 @@ function getHint() {
 
 
 
-};
-
-// draw starting sleuth cards
-function getSleuthCards() {
-
-	for (i=1; i<=3; i++) {
-		var myCard = getRandomInt(0, 12);
-			games.cards.push(myCard);
-	}
-};
-
-// drandomly select thief
-function selectThief() {
-
-	var myThief = getRandomInt(0, 12);
-
-	thiefSelected = thiefs[myThief];
-	game.thief.id = thiefs[thiefSelected].id;
-	game.thief.name = thiefs[thiefSelected].name;
-	game.thief.image = thiefs[thiefSelected].image;
 };
 
 // Load instructions
@@ -83,46 +55,83 @@ function newGame(player) {
 	// clear game object
 
 	game = {
-	'player': 'Andrew',
-	'detective': {'id': '',
-				  'name': '',
-				  'image':''},
-	'thief': {'id': '',
-			  'name': '',
-			  'image':'',
-			  'bounty': ''},
-	'turns': 0,
-	'crimes': [],
-	'bank': 1000,
-	'cards': [],
-	'clues': [],
-	'thief_location': {'id': '',
-						'x': '',
-						'y': ''},
-	'player_location': {'id': '',
-						'x': '',
-						'y': ''}
+		'player': 1,
+		'detective': {'id' = '6',
+				'name' = 'Sheerluck Homes'
+				},
+		'thief': {'id' = '10',
+				'name' = 'The Brain',
+				'bounty' = '1000'
+				},
+		'turn': 0,
+		'crimes': [],
+		'bank': 300,
+		'cards': [],
+		'clues': []
 	};
 
 	// let player choose detective
-	chooseDetective();
 
 
 	// draw sleuth cards
-	getSleuthCards();
 
 
 	// select thief
-	selectThief();
 
 
 	// commit crime
-	commitCrime();
 
 
 	// player turn
-	loadPlayerTurn();
+
 
 }
+
+
+function buildGameboard() {
+
+	for (i=1; i<38; i++) {
+		$(".inner_gameboard").append("<div class='row gameboard_row' id='row'" + i + "'</div><div class='col-sm-12 gameboard_col'></div></div>");
+
+		for (j=1; j<38; j++) {
+			var newDiv = document.createElement("div");
+    		$(newDiv).attr("class", "tile");
+    		$(newDiv).text(i);
+    		$("#row" + i).append(newDiv);
+		}
+	}
+
+}
+
+
+function displayGameboard() {
+
+	connection.query('SELECT * FROM tiles ORDER BY tile_id', function(err, res) {       
+        if(err) {
+		console.log(err);
+		}
+		else {
+            for (z=0; z<res.length; z++) {
+
+            	for (i=1; i<38; i++) {
+					$(".inner_gameboard").append("<div class='row gameboard_row' id='row'" + i + "'</div><div class='col-sm-12 gameboard_col'></div></div>");
+
+					for (j=1; j<38; j++) {
+						var newDiv = document.createElement("div");
+			    		$(newDiv).attr("class", "tile");
+			    		$(newDiv).attr("class", "bg" + res[z].env_type);
+			    		$(newDiv).attr("id", res[z].tile_id);
+			    		$(newDiv).attr("data-bldg", res[z].building);
+			    		$(newDiv).attr("data-space", res[z].space);
+			    		$(newDiv).text(res[z].tile_name);
+			    		$("#row" + i).append(newDiv);
+					}
+				}
+            }
+		}
+	});
+}
+
+buildGameboard();
 
 

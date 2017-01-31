@@ -29,6 +29,61 @@ VALUES (DEFAULT,'Furs'),
 
 
 
+INSERT INTO `detectives` (`detective_name`) 
+VALUES ("Mavis Marvel"),
+("Kent Ketchum"),
+("Harley Hand"),
+("Carrie Badger"),
+("Rosa Subrosa"),
+("Sheerluck Homes"),
+("Lester Lose O'"),
+("Nanny Harrow");
+
+
+INSERT INTO `thiefs` (`thief_name`, `bounty`) 
+VALUES 
+("Armand Slinger", 900),
+("Felix 'The Cat' Donovan", 800),
+("Felicia Field", 900),
+("Ruby Diamond", 800),
+("John Doe", 800),
+("Bunny and Clod", 1000),
+("Hans Offe", 900),
+("Luke Warm", 1000),
+("Saul Teen", 1000),
+("The Brain", 1000);
+
+INSERT INTO `cardtypes` (`card_type`) 
+VALUES 
+("extra spaces"),
+("extra turn"),
+("free tip"),
+("move anywhere"),
+("buy tip"),
+("press clue"),
+("collect cash"),
+("lose turn"),
+("return to acme");
+
+INSERT INTO `cards` (`card_text`, `cardtype_id`) 
+VALUES 
+("Go 5 Extra Spaces", 1),
+("Free Tip", 3),
+("Move Anywhere", 4),
+("Buy a Tip for $100", 5),
+("Buy a Tip for $50", 5),
+("Move Anywhere", 4),
+("Go 4 Extra Spaces", 1),
+("Buy a Tip for $50", 5),
+("Return to Acme Detective Agency", 9),
+("Buy a Tip for $100", 5);
+
+
+INSERT INTO `users` (`username`, `email`, `password`) 
+VALUES 
+("sherlock", "acarr@mail.utexas.edu", "password");
+
+
 INSERT INTO `tiles` (`tile_name`, `x1`,`y1`,`x2`,`y2`,`player_visit`,`thief_visit`,`building`,`space`,`created_at`,`updated_at`,`environment_id`,`building_id`) 
 VALUES ('1x1',1,1,1,1,0,0,DEFAULT,DEFAULT,DEFAULT,DEFAULT,7,DEFAULT),
 ('1x2',1,2,1,2,0,0,DEFAULT,DEFAULT,DEFAULT,DEFAULT,7,DEFAULT),

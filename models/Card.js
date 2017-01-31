@@ -2,7 +2,7 @@
 module.exports = function(sequelize, DataTypes) {
   var Card = sequelize.define('Card', {
     card_text: DataTypes.STRING,
-    image: DataTypes.STRING,
+    action_number: DataTypes.INTEGER,
     times_dealt: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0},
     times_played: { type: DataTypes.INTEGER, allowNull: false, defaultValue: 0}
   }, {
