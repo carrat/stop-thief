@@ -4,6 +4,11 @@
 
 		<!-- Bootstrap -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	    <!-- Add materialize stylesheet -->
+    	<link href="/static/css/materialize.css" rel="stylesheet" type="text/css" media="screen,projection">
+    	<!--load Materialize javascript - lets Materialize framework work-->
+    	<script src="/static/js/materialize.js"></script>
 	     <!-- Add Font Awesome -->
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -43,10 +48,13 @@
 	<body>
 
 	<header class="header">
-	<p>Logo</p>
-
+		<div class="row" id="header-bar">
+			<div class="col-sm-8 text-left"><a href="/"><img src="/static/images/stop-thief-logo.png" alt="Stop Thief" class="st-logo" width="100px"></a></div>
+			<div class="col-sm-2"><button type="button" class="saveGameButton">Save Game</button></div>
+			<div class="col-sm-2"><h4><span style="color: gray">Welcome,</span> sherlock</h4></div>
+		</div>
 	</header>
-		<div class="container home">      
+		<div class="container">      
 	        <div id="gameboard">
 	            <div id="wrapper">
 	                <div id="inner" class="inner_gameboard">
