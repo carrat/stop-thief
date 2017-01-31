@@ -10,4 +10,4 @@ A digital version of the 1979 electronic board game "Stop Thief!". Built for edu
 [Prezi Presentation](http://prezi.com/toedvldht_j4/?utm_campaign=share&utm_medium=copy)
 
 ####Heroku App
-[Heroku App Link]()
+[Heroku App Link](https://stopthief.herokuapp.com/)
