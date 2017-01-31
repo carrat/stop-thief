@@ -6,12 +6,12 @@
 
 var game = {
 		'player': 1,
-		'detective': {'id' = '6',
+		'detective': {'id': 6,
 				'name' = 'Sheerluck Homes'
 				},
-		'thief': {'id' = '10',
-				'name' = 'The Brain',
-				'bounty' = '1000'
+		'thief': {'id': 10,
+				'name': 'The Brain',
+				'bounty': 1000
 				},
 		'turn': 0,
 		'crimes': [],
@@ -56,19 +56,19 @@ function newGame(player) {
 
 	game = {
 		'player': 1,
-		'detective': {'id' = '6',
+		'detective': {'id': 6,
 				'name' = 'Sheerluck Homes'
 				},
-		'thief': {'id' = '10',
-				'name' = 'The Brain',
-				'bounty' = '1000'
+		'thief': {'id': 10,
+				'name': 'The Brain',
+				'bounty': 1000
 				},
 		'turn': 0,
 		'crimes': [],
 		'bank': 300,
 		'cards': [],
 		'clues': []
-	};
+};
 
 	// let player choose detective
 
