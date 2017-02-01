@@ -13,7 +13,20 @@ var newUser;
 
 // define routes
 router.get('/', function (req, res) {
-		res.render('index', req);
+		res.render('index', {layout: 'user'});
+});
+
+router.get('/login', function (req, res) {
+	var user = req.body; // set request to variable
+// create new instance of user
+	models.User.findOne(
+		{
+			email: user.email,
+			password: user.password
+		}
+	).then(function(){
+		res.redirect('/games/detective')
+	});
 });
 
 router.post('/create', function (req, res) {
@@ -27,7 +40,7 @@ router.post('/create', function (req, res) {
 			login_status: true
 		}
 	).then(function(){
-		res.redirect('/games')
+		res.redirect('/games/detective')
 	});
 });
 

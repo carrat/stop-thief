@@ -28,6 +28,11 @@ VALUES (DEFAULT,'Furs'),
 (DEFAULT,'Acme Detective Agency');
 
 
+UPDATE 'tiles'
+SET (player_visit = true)
+WHERE (environment_id = 1) OR (environment_id = 2) OR (environment_id = 3) OR (environment_id = 4) OR (environment_id = 5) OR (environment_id = 6) OR (environment_id=8);
+
+
 
 INSERT INTO `detectives` (`detective_name`) 
 VALUES ("Mavis Marvel"),
