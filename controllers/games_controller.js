@@ -22,7 +22,8 @@ router.get('/', function (req, res) {
 	'card_types': '',
 	'sounds': '',
 	'crime_scenes': '',
-	'thief_spaces': ''
+	'thief_spaces': '',
+	'myDetective': req.myDetective
 	};
 
 
@@ -88,6 +89,17 @@ router.get('/', function (req, res) {
 			console.log(gameObj.tiles.tilesObject[0].dataValues);
 		res.render('games/index', gameObj);
 		})
+	})
+});
+
+// Select Thief Route
+router.get('/detective', function (req, res) {
+	models.Detective.findAll()
+	.then(function(detectives){
+		var detectivesArr = {detectivesObject: detectives};
+		detObj = {detectives: detectivesArr};
+		console.log(detObj);
+		res.render('games/choose', {data: detObj, layout: 'detective'});
 	})
 });
 

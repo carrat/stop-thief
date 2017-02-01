@@ -17,7 +17,7 @@ body {
 	background-color: transparent;
 
 	height: 100%;
-	overflow: hidden;
+	/*overflow: hidden;*/
 
 }
 
@@ -266,7 +266,7 @@ h4 {
 
 h5 {
 	display: inline-block;
-	font-family: 'Libre Franklin', sans-serif;
+	font-family: 'Lobster', sans-serif;
 	font-size: 18px;
 	font-weight: normal;
 	padding-left: 20px;
@@ -383,12 +383,24 @@ input {
 
 }
 
+h5.detectiveName {
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	display: block;
+	font-family: 'Lobster', sans-serif;
+	font-size: 36px;
+}
+
 .loginBox {
 	padding: 40px;
 }
 
 #loginFrame {
-	background-color: #900362;;
+	background-color: #900362;
+	padding: 40px;
+	overflow: all;
+	padding-bottom: 100px;
 }
 
 .accountButton {
@@ -656,6 +668,26 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 
 .detective_card {
 	padding-bottom: 15px;
+
+}
+
+.detectiveCard {
+	margin-top: 0px;
+	margin-left: 0px;
+	margin-right: 20px;
+	width: 300px;
+	display: inline-block;
+	padding-top: 0px;
+
+}
+
+.detectiveCardDiv {
+	width: 30%;
+	display: inline-block;
+	padding-right: 30px;
+	margin-right: 30px;
+	margin-bottom: 50px;
+
 }
 
 h3.bankMoney {

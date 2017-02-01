@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- load jQuery -->
+	    <script 
+	    src="https://code.jquery.com/jquery-3.1.0.js"   
+	    integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   
+	    crossorigin="anonymous">    
+	    </script>
+	 <!--CSS -->
+		<!-- Bootstrap -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	    <!-- Add materialize stylesheet -->
+    	<link href="/static/css/materialize.css" rel="stylesheet" type="text/css" media="screen,projection">
+    	<!--load Materialize javascript - lets Materialize framework work-->
+    	<script src="/static/js/materialize.js"></script>
+	     <!-- Add Font Awesome -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <!-- Add unique stylesheet -->
+	    <link rel="stylesheet" href="/static/css/stop_thief_style.css" type="text/css" />
+	    <link rel="stylesheet" href="/static/css/gameboard.css" type="text/css" />
+
+	    <!-- Dice Roller -->
+	    <script src="/static/js/d6.js"></script>
+
+	    <!-- Add Google Web Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Libre+Franklin:300,400,500,600,700" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Barrio|Fjalla+One|Lobster" rel="stylesheet">
+	    <!-- Add jQuery -->
+	    <script src="https://code.jquery.com/jquery.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	    <!-- Add custom javascript -->
+	    <script src="/static/js/login.js"></script>
+	    <script src="/static/js/player.js"></script>
+	    <script src="/static/js/thief.js"></script>
+	     <script src="/static/js/game.js"></script>
+	   
+	    <!--JS for Kinetic screen to dispay gamebaord-->
+	    <script src="/static/js/jquery.kinetic.js" type="text/javascript" charset="utf-8"></script>
+
+		<title>Stop Thief!</title>
+	</head>
+
+	<body>
+	<header class="header">
+		<div class="row" id="header-bar">
+			<div class="col-sm-8 text-left"><a href="/"><img src="/static/images/stop-thief-logo.png" alt="Stop Thief" class="st-logo" width="100px"></a></div>
+			<div class="col-sm-2"></div>
+			<div class="col-sm-2"><h4><span style="color: gray">Welcome,</span> sherlock</h4></div>
+		</div>
+	</header>
+
+		<div class="container">      
+	        
+
+ 	        <div class="row" id="loginFrame"> 	
+				<div class="row">
+					<div class="col-sm-12">
+					<h2 class="newTitle">Select your Detective</h2>
+						{{{body}}}
+					</div>
+				</div>
+	   	    </div>
+
+
+	    <footer class="footer">
+	    	<div align="center" id="credits">
+	    	
+	        <p>&copy; 2017  <strong><a href="https://www.linkedin.com/in/ideabrothers">Andrew Carr</a></strong> | 
+	        Demo project for <a href="https://www.codingbootcamputaustin.com/">The Coding Boot Camp</a>  at UT Austin Center for Professional Education
+ 			| 
+	        <a href="https://github.com/carrat/stop-thief"  target="_blank">GitHub Repo</a>
+	        </p>
+	        </div>
+	    </footer>	
+
+	    <script>
+// If page is ready
+$(document).ready(function(){
+
+	$('.detectiveCardDiv').on('click', assignDetective);
+
+
+	function assignDetective() {
+
+		console.log ("clicked on detective");
+		var currentURL = window.location.origin;
+		window.location.href = currentURL + '/games';
+
+	}
+
+
+});
+</script>
+	</body>
+</HTML>
