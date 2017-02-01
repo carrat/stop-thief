@@ -67,12 +67,18 @@ function movePlayer() {
 	tileX = $(this).attr('data-x');
 	tileY = $(this).attr('data-y');
 	tileActive = $(this).attr('data-active');
+	var tileMoveable = $(this).attr('data-moveable');
+	console.log(tileMoveable);
 
-	if (tileActive === true) {
+	if (tileActive === true && tileMoveable === "true") {
 		placeMarker(game.detective.location.id, tileSelected, tileX, tileY, game.detective.id, game.detective.color);
 	}
-	else {
+	else if (tileMoveable === "true") {
 		placeMarker(game.detective.location.id, tileSelected, tileX, tileY, game.detective.id, game.detective.color);
+	}
+
+	else {
+		console.log("No Move")
 	}
 };
 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+
+		<!-- Bootstrap -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	     <!-- Add Font Awesome -->
+	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	    <!-- Add unique stylesheet -->
+	    <link rel="stylesheet" href="/static/css/stop_thief_style.css" type="text/css" />
+
+	    <!-- Add Google Web Fonts -->
+	    <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Libre+Franklin:300,400,500,600,700" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:400,400i,700,700i" rel="stylesheet">
+	   <link href="https://fonts.googleapis.com/css?family=Archivo+Black|News+Cycle:400,700|Oswald:300,400,700" rel="stylesheet">
+
+	    <!-- Add jQuery -->
+	    <script src="https://code.jquery.com/jquery.js"></script>
+	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	    <!-- Add custom javascript -->
+	    <script src="/static/js/login.js"></script>
+	    <script src="/static/js/player.js"></script>
+	    <script src="/static/js/thief.js"></script>
+
+	    <script>
+		  $( function() {
+		    $(document).tooltip();
+		  } );
+		</script>
+
+		<title>Stop Thief!</title>
+	</head>
+
+	<body>
+		<div class="container home">      
+	        <div class="jumbotron">
+	        	<div class="row">
+	        		<div class="col-sm-6">
+		         		<img src="/static/images/stop-thief-logo-2.png" alt="Stop Thief!" width="400px">
+		         	</div>
+
+		         	<div class="col-sm-6 text-right">
+		         		<button class="play-button" type="button" onclick="window.location.href='/games'">Play Game!</button>
+		         	</div>
+		         </div>
+	        </div>
+
+ 	        <div class="row">
+	        	<div class="col-sm-6 intro">
+		        	<h2>A crime is being committed…but where?</h2>
+		     			<p>
+						In the jewelry store? The bank? Where will the thief strike next? </p>
+						<p>
+						You are a licensed private detective. The thief you’re after is computer controlled and completely invisible. But you can hear him! You can eavesdrop on the thief whenever he moves on the board. You can hear him in the act of committing a crime. You hear him, too, as he opens a door, crosses a floor, breaks a window, runs on the street and escapes on the subway. Each sound you hear is a clue that will help you track him down. You’ll need all your skills of deduction and logic to follow the thief and corner him. Then you can call the police. With luck, the police will arrest the thief and cart him off to jail. Sometimes, though, he escapes from them. At other times, he’s just not where you think he is! If you can catch this thief, you’ll earn a large reward. If he gives you the slip, he’ll rob again…and again…and again…
+						</p>
+				</div>
+	        	<div class="col-sm-6 promo">
+
+		        	<div class="row">
+		        		<div class="col-sm-12 video">
+		        			<iframe width="100%" height="340px" src="https://www.youtube.com/embed/q3wpPRdDy4E" frameborder="0" allowfullscreen class="video"></iframe>
+		        		</div>
+		        	</div>
+
+	        </div>
+	    </div>
+
+	    <footer class="footer">
+	    	<div align="center" id="credits">
+	    	
+	        <p>&copy; 2017  <strong><a href="https://www.linkedin.com/in/ideabrothers">Andrew Carr</a></strong> | 
+	        Demo project for <a href="https://www.codingbootcamputaustin.com/">The Coding Boot Camp</a>  at UT Austin Center for Professional Education
+ 			| 
+	        <a href="https://github.com/carrat/stop-thief"  target="_blank">GitHub Repo</a>
+	        </p>
+	        </div>
+	    </footer>	
+	</body>
+</HTML>
