@@ -32,30 +32,40 @@ function thiefLanding(location, possibleMoves) {
 };
 
 //Move the thief
-function thiefMove(start, finish) {
+function thiefMove(start, finishID, finishSpace, finishEnv) {
 
 	// update thief's location in variable
-
-	// get landing spot from database
-
-	var newLocation = finish.tile_id;
-
+	game.thief.location.id = finishID;
+	game.thief.location.space = finishSpace;
 	// play sound for clue based on landing spot
+	playSounds(sounds.)
 
-	//if (finish.environment_id === 5 && finish.tile_id NOT IN crimes array) {
-		commitCrime(finish.tile_id);
-	//}
+	if (finishEnv === 5) {
+		commitCrime(finishSpace);
+	}
+	else {
+		playSound(finishEnv);
+		// launch modal for clue
+		launchModal(finishEnv);
+		// update the clues record
+		var newClue = {'space': finishSpace,
+						'clue': finishEnv
+					}
+		game.clues.push(newClue); // push new clue to crime scanner history
+	}
+};
 
-	//else {
-		playSound(finish.environment_id);
-	//}
+// launch a modal to display the clue information
+function launchModal(clue) {
+
+
+
 };
 
 // Thief is going to commit a crime
-function commitCrime() {
+function commitCrime(space) {
 	// play sound for crime scene
 	playSound(5);
-
 	//display modal with crime street or building location
 
 
@@ -66,12 +76,12 @@ function addTurn(pawn, start, finish, environment) {
 
 	var turn = {
 		'pawn': pawn,
-		'start': starting_location,
-		'end': end_location,
-		'type': environment_type
+		'start': start,
+		'end': finish,
+		'type': environment
 	};
 
-	myGame.turns.push(turn);
+	game.turns.push(turn);
 };
 
 

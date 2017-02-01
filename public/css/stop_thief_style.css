@@ -358,15 +358,15 @@ hr {
 }
 
 input {
-	color: #a40000;
-	padding-left: 10px;
-	padding-right: 10px;
-	margin-right: 10px;
-	box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.1);
-	border: 1px solid #bc0909;
-	outline-style: none;
-	padding-top: 5px;
-	padding-bottom: 5px;
+	background-color: #e29a00;
+	border: 0px;
+	display: inline-block;
+	padding: 10px;
+	font-size: 14px;
+	line-height: 14px;
+	vertical-align: middle;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+	margin-bottom: 30px;
 }
 
 select {
@@ -433,6 +433,7 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 	color: #FFFFFF;
 	font-size: 9pt;
 	height: 45px;
+	z-index: 100;
 
 
 }
@@ -457,8 +458,8 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 
 
 .tile {
-	width: 50px;
-	height: 50px;
+	width: 70px;
+	height: 70px;
 	display: inline-block;
 	margin: 0px;
 	margin-right: -4px;
@@ -466,24 +467,17 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 	vertical-align: middle;
 	color: #FFFFFF;
 	padding: 0px;
+	position: relative;
 }
 
-.tileHover {
+#inner img.marker {
+	z-index: 9999;
+	margin-left: 5px;
+	margin-top: 5px;
 	width: 50px;
 	height: 50px;
-	display: inline-block;
-	margin: 0px;
-	margin-right: -4px;
-	text-align: center;
-	vertical-align: middle;
-	color: #FFFFFF;
-	padding: 0px;
-	background: rgba(255,255,255, 0);
-}
-
-
-.tileHoverOff {
-	background: rgba(255,255,255, 0);
+	display: contents;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
 }
 
 .bg-1 {
@@ -555,8 +549,8 @@ input[type="button" i], input[type="submit" i], input[type="reset" i], input[typ
 
 
  .die {
- 	padding-left: 5px;
- 	padding-right: 5px;
+ 	padding-left: 0px;
+ 	padding-right: 0px;
  	padding-bottom: 10px;
  	width: 60px;
  }
@@ -701,10 +695,10 @@ h3.bankMoney {
 	background-color: #000000;
 }
 
-#inner { width: 1900px; height: 500px; }
+#inner { width: 2660px; height: 500px; }
     #inner img {
         display: block;
-        width: 1900px;
+        width: 2660px;
     }
 #left, #right, #up, #down { cursor: pointer; }
 

@@ -3,6 +3,7 @@ var express 	= require('express');
 var methodOverride	= require('method-override');
 var bodyParser 	= require('body-parser');
 var logger = require('morgan');
+var path = require('path');
 
 // define controllers
 var application_controller = require('./controllers/application_controller.js');
