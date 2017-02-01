@@ -360,11 +360,51 @@ hr {
 input {
 	border: 0px;
 	display: inline-block;
+	padding: 4px;
+	font-size: 14px;
+	line-height: 14px;
+	vertical-align: middle;
+	margin-bottom: 20px;
+	color: #000000;
+	width: 80%;
+
+}
+
+#dicebutton {
+	background-color: #e29a00;
+	border: 0px;
 	padding: 10px;
 	font-size: 14px;
 	line-height: 14px;
 	vertical-align: middle;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
 	margin-bottom: 30px;
+	color: #FFFFFF;
+
+}
+
+.loginBox {
+	padding: 40px;
+}
+
+#loginFrame {
+	background-color: #900362;;
+}
+
+.accountButton {
+	background-color: #e29a00;
+	border: 0px;
+	padding: 10px;
+	padding-top: 7px;
+	padding-bottom: 7px;
+	font-size: 14px;
+	vertical-align: middle;
+	box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+	margin-top: 20px;
+	margin-bottom: 10px;
+	color: #FFFFFF;
+	width: 130px;
+
 }
 
 select {
@@ -380,9 +420,7 @@ select {
 	height: 35px;
 }
 
-form {
-	display: inline-block;
-}
+
 
 label {
 	padding-right: 10px;
@@ -633,6 +671,9 @@ h3.bankMoney {
 	width: 100%;
 }
 
+label {
+	display: block;
+}
 
 
 /* Gameboard */

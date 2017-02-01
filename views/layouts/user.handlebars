@@ -48,54 +48,66 @@
 		         </div>
 	        </div>
 
- 	        <div class="row">
-	        	<div class="col-sm-12 intro">
+ 	        <div class="row" id="loginFrame">
+	        	<div class="col-sm-6 loginBox">
 		        	<h2>Login</h2>
 	     			<p>
 					<form action="/users/login">
 					<div class="row">
-						<div class="col-sm-4">
-							<label for="username">Enter Username</label>
+						<div class="col-sm-6">
+							<label for="username">Username</label>
 							<input type="text" name="username" id="username">
 						</div>
-						<div class="col-sm-4">
-							<label for="password">Enter Password</label>
+						<div class="col-sm-6">
+							<label for="password">Password</label>
 							<input type="password" name="password" id="password">
 						</div>
 
 						<div class="col-sm-4"></div>
 
 					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<input type="submit" name="login" value="Login" class="accountButton">
+						</div>
+
+					</div>
 					</form>
 					</p>
 				</div>
-	        	
-	   	    </div>
 
-	   	    <div class="row">
-	        	<div class="col-sm-12 intro">
+				<div class="col-sm-6 loginBox">
 		        	<h2>Create Account</h2>
 	     			<p>
 					<form action="/users/login">
 					<div class="row">
-						<div class="col-sm-4">
-							<label for="email">Enter Email Address</label>
+						<div class="col-sm-12">
+							<label for="email">Email Address</label>
 							<input type="email" name="email" id="email">
 						</div>
-						<div class="col-sm-4">
-							<label for="username">Enter Username</label>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<label for="username">Username</label>
 							<input type="text" name="username" id="username">
 						</div>
-						<div class="col-sm-4>
-							<label for="password">Enter Password/label>
+						<div class="col-sm-6">
+							<label for="password">Password</label>
 							<input type="password" name="password" id="password">
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-12">
+							<input type="submit" name="createAccount" value="Create Account"  class="accountButton">
 						</div>
 
 					</div>
 					</form>
 					</p>		
 				</div>	
+	        	
 	   	    </div>
+
 
 	    <footer class="footer">
 	    	<div align="center" id="credits">
