@@ -91,6 +91,32 @@ router.get('/', function (req, res) {
 	})
 });
 
+// Select Thief Route
+router.get('/selectthief', function (req, res) {
+	models.Thief.findAll()
+	.then(function(thiefs){
+		res.json(thiefs);
+	})
+});
+
+// Select Sleuth Cards
+router.get('/drawcards', function (req, res) {
+	models.Card.findAll({include: [models.Cardtype]		
+	})
+	.then(function(cards){
+		res.json(cards);
+	})
+});
+
+// Select Crime Scenes
+router.get('/crimescene', function (req, res) {
+	models.Tile.findAll({ where: {environment_id: 5} , include: [ models.Environment, models.Building ]
+	})
+	.then(function(crimescenes){
+		res.json(crimescenes);
+	})
+});
+
 
 
 

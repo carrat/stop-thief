@@ -29,7 +29,7 @@ function chooseColor() {
 //Player Turn Actions
 function loadPlayerTurn() {
 
-	if (playerChoice === 1) {
+	/*if (playerChoice === 1) {
 		rollDice(x, y)
 	}
 
@@ -38,7 +38,7 @@ function loadPlayerTurn() {
 	}
 	else if (playerChoice === 3) {
 
-	}
+	}*/
 
 };
 
@@ -56,8 +56,6 @@ function findSpaces(roll) {
 			// set tile to active
 		}
 	}
-
-	$('.tile').on('click', movePlayer);
 };
 
 function movePlayer() {
@@ -65,6 +63,7 @@ function movePlayer() {
 	console.log("Move Player");
 
 	tileSelected = $(this).attr('id');
+	console.log("to Tile: " + tileSelected);
 	tileX = $(this).attr('data-x');
 	tileY = $(this).attr('data-y');
 	tileActive = $(this).attr('data-active');

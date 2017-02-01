@@ -37,8 +37,6 @@ function thiefMove(start, finishID, finishSpace, finishEnv) {
 	// update thief's location in variable
 	game.thief.location.id = finishID;
 	game.thief.location.space = finishSpace;
-	// play sound for clue based on landing spot
-	playSounds(sounds.)
 
 	if (finishEnv === 5) {
 		commitCrime(finishSpace);

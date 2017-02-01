@@ -9,10 +9,10 @@ var game = {
 							'y': ''
 							}
 				},
-		'thief': {'id': 10,
-				'name': 'The Brain',
-				'bounty': 1000,
-				'location': {'id': '95',
+		'thief': {'id': '',
+				'name': '',
+				'bounty': '',
+				'location': {'space': '',
 							'x': '',
 							'y': ''
 							}
@@ -22,7 +22,7 @@ var game = {
 		'bank': 300,
 		'cards': [],
 		'clues': []
-};
+	};
 
 //Save Game
 function saveGame(game) {
@@ -64,9 +64,9 @@ function newGame(player) {
 							'y': ''
 							}
 				},
-		'thief': {'id': 10,
-				'name': 'The Brain',
-				'bounty': 1000,
+		'thief': {'id': '',
+				'name': '',
+				'bounty': '',
 				'location': {'space': '',
 							'x': '',
 							'y': ''
@@ -97,9 +97,9 @@ function drawCards(number) {
 
 	var currentURL = window.location.origin;
 
-	$.get(currentURL + '/drawcards', function (data) {
+	$.get(currentURL + '/games/drawcards', function (data) {
 		// draw a random number of cards based on the number needed
-		for (i=1; i<number; i++) {
+		for (i=1; i<=number; i++) {
 			var myCard = getRandomInt(0, (data.length-1));
 			var sleuthButton = $('<button>');
 			sleuthButton.addClass('sleuthCardButton');
@@ -119,7 +119,7 @@ function selectThief() {
 
 	var currentURL = window.location.origin;
 
-	$.get(currentURL + '/selectthief', function (data) {
+	$.get(currentURL + '/games/selectthief', function (data) {
 		// select a thief randomly
 		var myThief = getRandomInt(0, (data.length-1));
 		var thiefImg = $('<img>');
@@ -136,7 +136,8 @@ function chooseCrimeScene() {
 
 	var currentURL = window.location.origin;
 
-	$.get(currentURL + '/crimescene', function (data) {
+	$.get(currentURL + '/games/crimescene', function (data) {
+		console.log(data);
 		// select the first crime scene randomly
 		var myCrime = getRandomInt(0, (data.length-1));
 		var crimeObj = {'tile_id': data[myCrime].id,
@@ -146,6 +147,7 @@ function chooseCrimeScene() {
 		game.thief.location.space = data[myCrime].space;
 		game.thief.location.x = data[myCrime].x1;
 		game.thief.location.y = data[myCrime].y1;
+		game.crimes.push(crimeOnj)
 	})
 	.done(function (data) {
 		commitCrime(game.thief.location.space);
@@ -168,5 +170,6 @@ function buildGameboard() {
 }
 
 buildGameboard();
+newGame(1);
 
 
