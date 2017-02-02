@@ -2,7 +2,62 @@
 <!-- this is games/index.handlebars -->
 
 
-    {{#each tiles.tilesObject}}
-    	<div class="tile" id="{{this.dataValues.id}}" data-bldg="{{this.dataValues.building_id}}" data-space="{{this.dataValues.space}}" data-x="{{this.dataValues.x1}}"  data-moveable="{{this.dataValues.player_visit}}" data-y="{{this.dataValues.y1}}" data-image="/static/images/tiles/{{this.dataValues.id}}.png" style="background-image:url(/static/images/tiles/{{this.dataValues.id}}.png); background-size: 100% 100%; background-repeat: no-repeat)">
+<div id="gameboard">
+            <div id="wrapper">
+                <div id="inner" class="inner_gameboard">
+               		 {{#each tiles.tilesObject}}
+				    	<div class="tile" id="{{this.dataValues.id}}" data-bldg="{{this.dataValues.building_id}}" data-space="{{this.dataValues.space}}" data-x="{{this.dataValues.x1}}"  data-moveable="{{this.dataValues.player_visit}}" data-y="{{this.dataValues.y1}}" data-image="/static/images/tiles/{{this.dataValues.id}}.png" style="background-image:url(/static/images/tiles/{{this.dataValues.id}}.png); background-size: 100% 100%; background-repeat: no-repeat)">
+				    	</div>
+				    {{/each}}
+                    
+                </div>
+            </div>
+           <!-- <div id="controls">
+                <span id="left">LEFT</span> |
+                <span id="right">RIGHT</span> |
+                 <span id="up">UP</span> |
+                <span id="down">DOWN</span>
+            </div>  
+           -->	
+        </div>
+
+    	<div id="controlboard">
+    		<div class="row">
+    			<div class="col-sm-2 control">
+    				{{!--<div class="control_title">THIEF</div>--}}
+    				<div id="currentThief"></div>
+    			</div>
+    			<div class="col-sm-4 control">
+    				<div class="control_title">ELECTRONIC CRIME SCANNER</div>
+    				<div id="crime_scanner">
+	    				<div class="clue_history">Running on Street</div>
+	    				<div class="clue_history">Subway</div>
+	    				<div class="clue_history">Furs - Window Breaking!</div>
+	    				<div class="clue_history"><span class="crime_text">CRIME!</span> Furs Building</div>
+	    			</div>
+    			</div>
+    			<div class="col-sm-2 control">
+    			{{!--<div class="control_title">SLEUTH CARDS</div>--}}
+    				<div id="currentSleuthCards"></div>
+    			</div>
+    			<div class="col-sm-2 control">
+    				{{!--<div class="control_title">DETECTIVE ON CASE</div>--}}
+    				<div id="currentDetective"></div>
+					{{!--<div class="control_title">BANK</div>--}}
+	        		<h3 class="bankMoney">$300</h3>
+	        	</div>
+    			<div class="col-sm-2 control">
+    				{{!--<div class="control_title">TURN ACTIONS</div>--}}
+    				<!--<img src="/static/images/dice/4.png" alt="4"  class="die"><img src="/static/images/dice/6.png" alt="6"  class="die">-->
+    				<script type='text/javascript'>
+				     	D6.setBaseUrl('/static/images/dice/');
+					  	D6.dice(2, findSpaces);
+					  </script>
+    				<button type="button" class="arrestButton">Make Arrest</button>
+    				<button type="button" class="endTurnButton">End Turn</button>
+    			</div>
+    		</div>
     	</div>
-    {{/each}}
+
+
+   

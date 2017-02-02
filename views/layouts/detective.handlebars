@@ -53,17 +53,9 @@
 	</header>
 
 		<div class="container">      
-	        
+	        {{{body}}}
 
- 	        <div class="row" id="loginFrame"> 	
-				<div class="row">
-					<div class="col-sm-12">
-					<h2 class="newTitle">Select your Detective</h2>
-						{{{body}}}
-					</div>
-				</div>
-	   	    </div>
-
+ 	    </div>
 
 	    <footer class="footer">
 	    	<div align="center" id="credits">
@@ -85,9 +77,6 @@ $(document).ready(function(){
 
 	function assignDetective() {
 
-		console.log ("clicked on detective");
-		var currentURL = window.location.origin;
-		window.location.href = currentURL + '/games';
 
 	}
 

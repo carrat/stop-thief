@@ -14,9 +14,20 @@ function placeMarker(prevSpace, space, x, y, marker, color) {
 function chooseDetective() {
 
 	detectiveSelected = $(this).attr('id');
-	game.detective.id = detectives[detectiveSelected].id;
-	game.detective.name = detectives[detectiveSelected].name;
-	game.detective.image = detectives[detectiveSelected].image;
+
+	var currentURL = window.location.origin;
+
+
+		console.log("Select Detective");
+		console.log(data);
+
+		var detectiveImg = $('<img>');
+		detectiveImg.addClass('detective_card');
+		detectiveImg.attr('src', '/static/images/detectives/' + game.detective.id + '.png');
+		$('#currentDetective').html(detectiveImg);
+		//game.detective.id = data.id;
+		//game.detective.name = data.detective_name;
+
 
 };
 

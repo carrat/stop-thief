@@ -1,7 +1,7 @@
 // initialize game variables
 var game = {
 		'player': 1,
-		'detective': {'id': 6,
+		'detective': {'id': '6',
 				'name': 'Sheerluck Homes',
 				'color': 'blue',
 				'location': {'id': '95',
@@ -56,7 +56,7 @@ function newGame(player) {
 	// clear game object
 	game = {
 		'player': 1,
-		'detective': {'id': 6,
+		'detective': {'id': '6',
 				'name': 'Sheerluck Homes',
 				'color': 'blue',
 				'location': {'id': '95',

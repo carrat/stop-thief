@@ -26,6 +26,8 @@
 
 	    <!-- Add Google Web Fonts -->
 	    <link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700|Libre+Franklin:300,400,500,600,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Anton|Fjalla+One|Francois+One|Glegoo" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Barrio|Fjalla+One|Glegoo:400,700|Inconsolata|Lobster|Merriweather:300,300i,400,400i,700|Passion+One:400,700,900|Patua+One|Rokkitt:400,700|Share+Tech+Mono|VT323" rel="stylesheet">
 	    <!-- Add jQuery -->
 	    <script src="https://code.jquery.com/jquery.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
@@ -38,14 +40,10 @@
 	    <!--JS for Kinetic screen to dispay gamebaord-->
 	    <script src="/static/js/jquery.kinetic.js" type="text/javascript" charset="utf-8"></script>
 
-
-
-
 		<title>Stop Thief!</title>
 	</head>
 
 	<body>
-
 	<header class="header">
 		<div class="row" id="header-bar">
 			<div class="col-sm-8 text-left"><a href="/"><img src="/static/images/stop-thief-logo.png" alt="Stop Thief" class="st-logo" width="100px"></a></div>
@@ -55,56 +53,7 @@
 	</header>
 
 	<div class="container">      
-        <div id="gameboard">
-            <div id="wrapper">
-                <div id="inner" class="inner_gameboard">
-                {{{ body }}}
-                    
-                </div>
-            </div>
-           <!-- <div id="controls">
-                <span id="left">LEFT</span> |
-                <span id="right">RIGHT</span> |
-                 <span id="up">UP</span> |
-                <span id="down">DOWN</span>
-            </div>  
-           -->	
-        </div>
-
-    	<div id="controlboard">
-    		<div class="row">
-    			<div class="col-sm-2 control">
-    				<div class="control_title">Thief</div>
-    				<div id="currentThief"></div>
-    			</div>
-    			<div class="col-sm-4 control">
-    				<div class="control_title">Crime Scanner</div>
-    				<div class="clue_history">Running on Street</div>
-    				<div class="clue_history">Running on Street</div>
-    				<div class="clue_history">Furs Building - Window Breaking!</div>
-    				<div class="clue_history"><span class="crime_text">CRIME!</span> Furs Building</div>
-    			</div>
-    			<div class="col-sm-2 control"><div class="control_title">Sleuth Cards</div>
-    				<div id="currentSleuthCards"></div>
-    			</div>
-    			<div class="col-sm-2 control">
-    				<div class="control_title">Your Detective</div>
-    				<img src="/static/images/detectives/6.png" alt="Detective" width="90%" class="detective_card">
-					<div class="control_title">Bank</div>
-	        		<h3 class="bankMoney">$300</h3>
-	        	</div>
-    			<div class="col-sm-2 control">
-    				<div class="control_title">Turn Actions</div>
-    				<!--<img src="/static/images/dice/4.png" alt="4"  class="die"><img src="/static/images/dice/6.png" alt="6"  class="die">-->
-    				<script type='text/javascript'>
-				     	D6.setBaseUrl('/static/images/dice/');
-					  	D6.dice(2, findSpaces);
-					  </script>
-    				<button type="button" class="arrestButton">Make Arrest</button>
-    				<button type="button" class="endTurnButton">End Turn</button>
-    			</div>
-    		</div>
-    	</div>
+        {{{body}}}
     </div>
 
     <footer class="footer">
@@ -156,6 +105,8 @@ $(document).ready(function(){
 
 	placeMarker('0', '95', 3, 19, game.detective.id, game.detective.color);
 
+
+    $('.detectiveCardDiv').on('click', chooseDetective);
 	$('.tile').on('click', movePlayer);
 	$('.arrestButton').on('click', makeArrest);
 	$('.endTurnButton').on('click', endTurn);

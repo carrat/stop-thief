@@ -23,14 +23,12 @@ router.get('/', function (req, res) {
 	'sounds': '',
 	'crime_scenes': '',
 	'thief_spaces': '',
-	'myDetective': req.myDetective
+	'myDetective': ''
 	};
-
 
 	models.Tile.findAll({order: ['x1', 'y1'],  include: [ models.Environment, models.Building ]})
 	.then(function(tiles){
 		var tilesArr = {tilesObject: tiles};
-		console.log(tilesArr);
 		gameObj = {tiles: tilesArr};
 	})
 
@@ -38,7 +36,6 @@ router.get('/', function (req, res) {
 		models.Detective.findAll()
 		.then(function(detectives){
 			var detectivesArr = {detectiveObject: detectives};
-			//console.log(detectivesArr);
 			gameObj.detectives = detectivesArr;
 		})	
 	})
@@ -46,7 +43,6 @@ router.get('/', function (req, res) {
 		models.Thief.findAll()
 		.then(function(thiefs){
 			var thiefsArr = {thiefObject: thiefs};
-			//console.log(thiefsArr);
 			gameObj.thiefs = thiefsArr;
 		})	
 	})
@@ -54,7 +50,6 @@ router.get('/', function (req, res) {
 		models.Card.findAll( {include: [ models.Cardtype]})
 		.then(function(cards){
 			var cardsArr = {cardObject: cards};
-			//console.log(cardsArr);
 			gameObj.cards = cardsArr;
 		})	
 	})
@@ -62,7 +57,6 @@ router.get('/', function (req, res) {
 		models.Sound.findAll({include: [ models.Environment]})
 		.then(function(sounds){
 			var soundsArr = {soundObject: sounds};
-			//console.log(soundsArr);
 			gameObj.sounds = soundsArr;
 		})	
 	})
@@ -72,7 +66,6 @@ router.get('/', function (req, res) {
 		})
 		.then(function(crime_scenes){
 			var crimeScenesArr = {crimeScenesObject: crime_scenes};
-			//console.log(crimeScenesArr);
 			gameObj.crime_scenes = crimeScenesArr;
 		})	
 	})
@@ -82,24 +75,29 @@ router.get('/', function (req, res) {
 		})
 		.then(function(thief_spaces){
 			var thiefSpacesArr = {thiefSpacesObject: thief_spaces};
-			//console.log(thiefSpacesArr);
 			gameObj.thief_spaces = thiefSpacesArr;
 		})
 		.then(function(){
-			console.log(gameObj.tiles.tilesObject[0].dataValues);
 		res.render('games/index', gameObj);
 		})
 	})
 });
 
-// Select Thief Route
+// Show all Detectives for choice Route
 router.get('/detective', function (req, res) {
 	models.Detective.findAll()
 	.then(function(detectives){
 		var detectivesArr = {detectivesObject: detectives};
 		detObj = {detectives: detectivesArr};
-		console.log(detObj);
-		res.render('games/choose', {data: detObj, layout: 'detective'});
+		res.render('games/choose', {data: detObj, layout: 'main'});
+	})
+});
+
+// Select Detective Route
+router.get('/selectdetective/:id', function (req, res) {
+	models.Detective.findOne( {where: {id: req.params.id}})
+	.then(function(detective){
+		res.json(detective);
 	})
 });
 
@@ -128,10 +126,6 @@ router.get('/crimescene', function (req, res) {
 		res.json(crimescenes);
 	})
 });
-
-
-
-
 
 // export router
 module.exports = router;

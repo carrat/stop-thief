@@ -1,10 +1,19 @@
 
 <!-- this is games/index.handlebars -->
 
+<div class="row" id="loginFrame"> 	
+	<div class="col-sm-12">
+	<h2 class="newTitle">Select your Detective</h2>
+		{{#each data.detectives.detectivesObject}}
 
-    {{#each data.detectives.detectivesObject}}
+	    	<div class="detectiveCardDiv" id="{{this.dataValues.id}}" data-image="/static/images/detectives/{{this.dataValues.id}}.png">
+	    		<h5 class="detectiveName">{{this.dataValues.detective_name}}</h5><img src="/static/images/detectives/{{this.dataValues.id}}.png" class="detectiveCard" width="200px">
+	    	</div>
+	    {{/each}}
+	</div>
+</div>
+
+
+
+
     
-    	<div class="detectiveCardDiv" id="{{this.dataValues.id}}" data-image="/static/images/detectives/{{this.dataValues.id}}.png">
-    		<h5 class="detectiveName">{{this.dataValues.detective_name}}</h5></br><img src="/static/images/detectives/{{this.dataValues.id}}.png" class="detectiveCard" width="200px">
-    	</div>
-    {{/each}}

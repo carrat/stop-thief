@@ -19,12 +19,9 @@ router.get('/', function (req, res) {
 router.get('/login', function (req, res) {
 	var user = req.body; // set request to variable
 // create new instance of user
-	models.User.findOne(
-		{
-			email: user.email,
-			password: user.password
-		}
-	).then(function(){
+	models.User.findOne({where: {email: user.email, password: user.password}
+	})
+	.then(function(){
 		res.redirect('/games/detective')
 	});
 });
